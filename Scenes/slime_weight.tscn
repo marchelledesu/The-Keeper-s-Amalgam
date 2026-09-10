@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ryemifbvfpf5"]
+
+[ext_resource type="Script" uid="uid://vx6dhv1bbj56" path="res://Scripts/slime_weight.gd" id="1_ufx5m"]
+[ext_resource type="Texture2D" uid="uid://dyttmxlepkoyf" path="res://Sprites/slime.png" id="2_nh77q"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nh77q"]
+diffuse_texture = ExtResource("2_nh77q")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bbgfi"]
+diffuse_texture = ExtResource("2_nh77q")
+
+[node name="SlimeWeight" type="Polygon2D" unique_id=1721874847 groups=["slime"]]
+texture = SubResource("CanvasTexture_nh77q")
+script = ExtResource("1_ufx5m")
+despawn_time = 600.0
+metadata/_custom_type_script = "uid://kol6k5y6rb8a"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1167132095]
+scale = Vector2(0.7, 0.7)
+texture = SubResource("CanvasTexture_bbgfi")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=385946190]
+target_position = Vector2(0, 10)
+hit_from_inside = true

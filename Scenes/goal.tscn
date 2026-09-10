@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dhs473gregdno"]
+
+[ext_resource type="Texture2D" uid="uid://dvfhnkm4smvii" path="res://Sprites/nextleveldoor.png" id="1_paeek"]
+[ext_resource type="Script" uid="uid://b2ba5uuc72oq" path="res://Scripts/goal.gd" id="1_s0pnd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyj7g"]
+size = Vector2(21.5, 37.5)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bbgfi"]
+diffuse_texture = ExtResource("1_paeek")
+
+[node name="Goal" type="Area2D" unique_id=387749263]
+script = ExtResource("1_s0pnd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1851555426]
+shape = SubResource("RectangleShape2D_dyj7g")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=280815663]
+position = Vector2(1.1920929e-07, -1.9999998)
+scale = Vector2(1.828125, 1.90125)
+texture = SubResource("CanvasTexture_bbgfi")

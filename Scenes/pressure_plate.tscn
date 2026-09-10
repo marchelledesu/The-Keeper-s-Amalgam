@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dvy6ga52qu1d8"]
+
+[ext_resource type="Script" uid="uid://bvgydtajx05er" path="res://Scripts/pressure_plate.gd" id="1_u55f7"]
+[ext_resource type="Texture2D" uid="uid://bvm81y8x0gvil" path="res://Sprites/button-Sheet.png" id="2_85ng3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85ng3"]
+atlas = ExtResource("2_85ng3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6fkm"]
+atlas = ExtResource("2_85ng3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awgow"]
+atlas = ExtResource("2_85ng3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ydvm"]
+atlas = ExtResource("2_85ng3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ataq"]
+atlas = ExtResource("2_85ng3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44wik"]
+atlas = ExtResource("2_85ng3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bbgfi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85ng3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6fkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awgow")
+}],
+"loop": 0,
+"name": &"pressed",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ydvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ataq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44wik")
+}],
+"loop": 0,
+"name": &"unpressed",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbgfi"]
+size = Vector2(20, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_va4nv"]
+size = Vector2(20, 1)
+
+[node name="PressurePlate" type="Area2D" unique_id=632638373]
+script = ExtResource("1_u55f7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1196814390]
+sprite_frames = SubResource("SpriteFrames_bbgfi")
+animation = &"pressed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1691591591]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_bbgfi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=904697336]
+position = Vector2(0, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1084530267]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_va4nv")

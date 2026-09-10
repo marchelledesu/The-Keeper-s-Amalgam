@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c30rx6u5rs0hk"]
+
+[node name="PlayerControls" type="CanvasLayer" unique_id=735741228]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1192195335]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -104.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label4" type="Label" parent="VBoxContainer" unique_id=2020047674]
+layout_mode = 2
+text = "Player Controls"
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=195110505]
+layout_mode = 2
+text = "Move: A / D or Arrows"
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=1318718125]
+layout_mode = 2
+text = "Jump: Spacebar"
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=1351679300]
+layout_mode = 2
+text = "Throw Slime: Left Click & Drag"

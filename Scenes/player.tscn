@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://pa8uqfhogcjh"]
+
+[ext_resource type="Script" uid="uid://d256uenksxyac" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://nt2adtunr2xg" path="res://Sprites/todd.png" id="2_6t5aa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bbgfi"]
+radius = 10.999189
+height = 29.99779
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dyj7g"]
+diffuse_texture = ExtResource("2_6t5aa")
+
+[node name="Player" type="CharacterBody2D" unique_id=2107011007]
+script = ExtResource("1_cvnsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2066428626]
+position = Vector2(0, 1)
+rotation = 0.012139439
+shape = SubResource("CapsuleShape2D_bbgfi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=620031058]
+texture = SubResource("CanvasTexture_dyj7g")
+
+[node name="ThrowPoint" type="Marker2D" parent="." unique_id=1415831650]
+position = Vector2(8, 5)
+
+[node name="TrajectoryLine" type="Line2D" parent="." unique_id=775241881]
+position = Vector2(8, 5)
+width = 1.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1128671433]
+drag_horizontal_enabled = true
+drag_horizontal_offset = 1.0
